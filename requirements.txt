@@ -1,0 +1,101 @@
+@"
+# Data Mining Lab 2 - Association Rule Mining
+
+## Aim
+
+To perform association rule mining using the Apriori algorithm and study the effect of preprocessing techniques such as Discretize and Resample on rule generation and interpretability.
+
+## Tools Used
+
+- Python 3
+- WEKA
+- Pandas
+- NumPy
+- SciPy
+- Scikit-learn
+- Mlxtend
+
+## Datasets
+
+- weather.nominal.arff
+- iris.arff
+- glass.arff
+
+## Experiment 1 - Weather Dataset
+
+Apriori algorithm is applied to the Weather dataset.
+
+Parameters:
+- Minimum Support: 0.20
+- Minimum Confidence: 0.80
+- Number of Rules: 10
+
+## Experiment 2 - Iris Dataset
+
+Apriori algorithm is applied before and after discretization.
+
+Discretization:
+- Attributes: 1-4
+- Number of bins: 3
+
+Apriori parameters:
+- Minimum Support: 0.20
+- Minimum Confidence: 0.80
+
+## Experiment 3 - Glass Dataset
+
+The Glass dataset is first resampled and then discretized before applying Apriori.
+
+Preprocessing:
+- Resampling: 50%
+- Discretization: 3 categories
+
+Apriori parameters:
+- Minimum Support: 0.10
+- Minimum Confidence: 0.70
+
+## Observations
+
+1. Apriori works effectively with categorical data.
+2. Continuous numerical attributes require preprocessing for association rule mining.
+3. Discretization converts numerical values into categories such as Low, Medium and High.
+4. Resampling reduces the number of transactions.
+5. Preprocessing improves the interpretability of association rules.
+
+## Project Structure
+
+DMLab2/
+├── datasets/
+│   ├── glass.arff
+│   ├── iris.arff
+│   └── weather.nominal.arff
+├── outputs/
+├── src/
+│   ├── glass_apriori.py
+│   ├── iris_apriori.py
+│   └── weather_apriori.py
+├── README.md
+└── requirements.txt
+
+## How to Run
+
+Install the required libraries:
+
+python -m pip install -r requirements.txt
+
+Run Weather Apriori:
+
+python .\src\weather_apriori.py
+
+Run Iris Apriori:
+
+python .\src\iris_apriori.py
+
+Run Glass Apriori:
+
+python .\src\glass_apriori.py
+
+## Conclusion
+
+The experiment demonstrates association rule mining using the Apriori algorithm. The results show that preprocessing techniques such as discretization and resampling make continuous datasets more suitable for association rule mining and produce more interpretable association rules.
+"@ | Set-Content .\README.md
